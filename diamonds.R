@@ -24,5 +24,11 @@ lm(price~carat, data = train) -> linear_model1
 summary(linear_model1)
 
 predict(linear_model1, newdata = test) -> my_result
-
 cbind(Actual=test$price, Predicted=my_result) -> final_data
+
+as.data.frame(final_data) -> final_data
+error <- final_data$Actual - final_data$Predicted 
+final_data <- cbind(final_data, error)
+
+# large error ~1220
+cat("root mean square error: ", sqrt(mean((final_data$error)**2)) )
