@@ -31,4 +31,20 @@ error <- final_data$Actual - final_data$Predicted
 final_data <- cbind(final_data, error)
 
 # large error ~1220
-cat("root mean square error: ", sqrt(mean((final_data$error)**2)) )
+rmse1 <- sqrt(mean((final_data$error)**2))
+cat("root mean square error: ", rmse1)
+
+# linear regression - multiple variables
+
+linear_model2 <- lm(price ~ x+y+z, data = train)
+summary(linear_model2)
+my_result2 <- predict(linear_model2, newdata = test)
+cbind(Actual=test$price, Predicted=my_result2) -> final_data2
+
+as.data.frame(final_data2) -> final_data2
+error2 <- final_data2$Actual - final_data2$Predicted 
+final_data2 <- cbind(final_data2, error2)
+
+# large error 1560
+rmse2 <- sqrt(mean((final_data2$error2)**2))
+cat("root mean square error: ", rmse2)
