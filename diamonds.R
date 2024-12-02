@@ -30,7 +30,7 @@ as.data.frame(final_data) -> final_data
 error <- final_data$Actual - final_data$Predicted 
 final_data <- cbind(final_data, error)
 
-# large error ~1220
+# large error 1220
 rmse1 <- sqrt(mean((final_data$error)**2))
 cat("root mean square error: ", rmse1)
 
