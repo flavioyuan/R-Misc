@@ -12,9 +12,11 @@ n_simulacoes <- 100
 n_lancamentos <- 10
 p <- 0.2
 
-resultado <- matrix(0, nrow=n_simulacoes, ncol=n_lancamentos) 
+resultado <- matrix(0, nrow=n_simulacoes, ncol=n_lancamentos)
 
   for (i in 1:n_simulacoes) {
   resultado[i,] <- sample(c(TRUE, FALSE), n_lancamentos, replace=TRUE, prob=c(p, 1-p))
-}
+  }
+
+num_head_resultado <- rowSums(resultado)
 ```
