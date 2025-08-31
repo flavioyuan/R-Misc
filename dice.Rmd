@@ -8,9 +8,9 @@ require(ggplot2)
 ```
 
 ```{r simulacao lancamento da moeda}
-n_simulacoes <- 100
+n_simulacoes <- 1000
 n_lancamentos <- 10
-p <- 0.2
+p <- 0.5
 
 resultado <- matrix(0, nrow=n_simulacoes, ncol=n_lancamentos)
 
@@ -19,4 +19,9 @@ resultado <- matrix(0, nrow=n_simulacoes, ncol=n_lancamentos)
   }
 
 num_head_resultado <- rowSums(resultado)
+avg_head_resultado <- rowMeans(resultado)
+```
+
+```{r histograma media resultado}
+hist(avg_head_resultado)
 ```
