@@ -7,7 +7,7 @@ Simulacao do lancamento de uma moeda
 require(ggplot2)
 ```
 
-```{r}
+```{r simulacao lancamento da moeda}
 n_simulacoes <- 100
 n_lancamentos <- 10
 p <- 0.2
