@@ -2,6 +2,10 @@
 title: "R inference examples - Dice"
 output: html_notebook
 ---
+Simulacao do lancamento de uma moeda
+```{r pacotes necessarios}
+require(ggplot2)
+```
 
 ```{r}
 n_simulacoes <- 100
