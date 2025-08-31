@@ -1,0 +1,8 @@
+---
+title: "R inference examples - Dice"
+output: html_notebook
+---
+
+```{r}
+
+```
